@@ -69,7 +69,7 @@ func (r *RuntimeSessionRepository) Create(session *model.RunnerSession) error {
 	go func() {
 		m := make([]byte, 1024)
 
-		con.SetDeadline(time.Now().Add(time.Second * 15))
+		con.SetDeadline(time.Now().Add(time.Second * 20))
 		for {
 			select {
 			case <-stop:
