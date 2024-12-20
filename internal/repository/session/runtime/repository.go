@@ -59,7 +59,7 @@ func (r *RuntimeSessionRepository) Create(session *model.RunnerSession) error {
 		break
 	}
 	defer func() {
-		if _, loaded := r.sessions.Load(session.ID); !loaded {
+		if _, loaded := r.sessions.Load(session.ID.String()); !loaded {
 			con.Close()
 		}
 	}()
